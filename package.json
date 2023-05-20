@@ -1,0 +1,25 @@
+{
+  "name": "google-sign-in-verification",
+  "version": "1.0.0",
+  "description": "A Lambda function that verifies Google Sign-In tokens and retrieves user information",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "Pavan Nallagoni",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.1379.0",
+    "dotenv": "^16.0.3",
+    "google-auth-library": "^8.8.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pavan3008/GoogleSignInVerification.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pavan3008/GoogleSignInVerification/issues"
+  },
+  "homepage": "https://github.com/pavan3008/GoogleSignInVerification#readme"
+}
