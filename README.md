@@ -1,6 +1,6 @@
 # Google Sign-In Verification
 
-This repository contains code for an API endpoint that verifies Google Sign-In tokens and retrieves user information. It can be integrated with a SwiftUI front-end application.
+A Lambda function that verifies Google Sign-In tokens and retrieves user information. It can be integrated with a SwiftUI front-end application.
 
 ## Usage
 

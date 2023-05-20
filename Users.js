@@ -1,6 +1,6 @@
 const AWS = require('aws-sdk');
 const dynamodb = new AWS.DynamoDB.DocumentClient();
-const DYNAMODB_TABLE_NAME = "trips";
+const tableName = process.env.DYNAMODB_TABLE_NAME;
 
 require('dotenv').config();
 const clientId= process.env.CLIENT_ID;
@@ -25,7 +25,7 @@ async function verifyToken(idToken) {
 
     const userId = userInfo.sub;
     const params = {
-      TableName: DYNAMODB_TABLE_NAME,
+      TableName: tableName,
       Key: {
         'PK': `User${userId}`,
         'SK': `User${userId}`
@@ -41,7 +41,7 @@ async function verifyToken(idToken) {
         email: userInfo.email
       };
       const putParams = {
-        TableName: DYNAMODB_TABLE_NAME,
+        TableName: tableName,
         Item: {
           'PK': `User${userId}`,
           'SK': `User${userId}`,
@@ -64,7 +64,7 @@ async function verifyToken(idToken) {
 async function getUserInfoById(userId) {
   try {
     const params = {
-      TableName: DYNAMODB_TABLE_NAME,
+      TableName: tableName,
       Key: {
         'PK': `User${userId}`,
         'SK': `User${userId}`
